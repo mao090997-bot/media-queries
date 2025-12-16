@@ -1,0 +1,48 @@
+/* ===== ESTILOS BASE (MÓVIL) ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(236, 236, 214);
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column; /* Móvil: columna */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.caja {
+  padding: 20px;
+  background-color: rgb(240, 200, 200);
+  border: 2px solid #5f1e1e;
+}
+
+/* ===== TABLET (≥768px) ===== */
+@media (min-width: 768px) {
+  body {
+    background-color: rgb(5, 85, 5);
+  }
+
+  .contenedor {
+    flex-direction: row;
+  }
+}
+
+/* ===== ESCRITORIO (≥1200px) ===== */
+@media (min-width: 1200px) {
+  body {
+    background-color: rgb(34, 137, 172);
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}

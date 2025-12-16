@@ -1,0 +1,84 @@
+/* Estilo base (pantallas grandes) */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    /* Tablets */
+    @media (max-width: 1024px) {
+      body {
+        background-color: lightgreen;
+      }
+    }
+
+    /* Móviles */
+    @media (max-width: 768px) {
+      body {
+        background-color: lightcoral;
+      }
+    }
+
+    /* Móviles pequeños */
+    @media (max-width: 480px) {
+      body {
+        background-color: lightgoldenrodyellow;
+      }
+    }
+    /* ===== ESTILOS BASE (ESCRITORIO) ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #13fa49;
+  padding: 5px 11px;
+}
+
+.logo {
+  color: rgb(43, 8, 105);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.menu-lista {
+  list-style: none;
+  display: flex;
+  gap: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-lista li a {
+  color: rgb(16, 12, 8);
+  
+}
+
+/* ===== MÓVIL (≤768px) ===== */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-lista {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu-lista li {
+    padding: 10px 0;
+    border-top: 1px solid #9c7e7e;
+  }
+}
