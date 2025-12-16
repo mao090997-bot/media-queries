@@ -1,14 +1,17 @@
-/* Estilo base (pantallas grandes) */
+html {
+  font-size: 16px;
+}
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: lightblue;
       text-align: center;
-      padding: 40px;
+      padding: 2rem;
     }
 
     h1 {
       color: #333;
+      font-size: 2rem;
     }
 
     /* Tablets */
@@ -37,48 +40,134 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #13fa49;
-  padding: 5px 11px;
-}
+
 
 .logo {
   color: rgb(43, 8, 105);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .menu-lista {
   list-style: none;
-  display: flex;
-  gap: 0px;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;      /* 📱 vertical */
+  align-items: center;
+}
+
+.menu-lista li {
+  width: 100%;
+  text-align: center;
 }
 
 .menu-lista li a {
-  color: rgb(16, 12, 8);
-  
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px solid #ccc;
 }
 
-/* ===== MÓVIL (≤768px) ===== */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    align-items: flex-start;
+@media (min-width: 768px) {
+  .menu-lista .tarjetas {
+    flex-direction: row;       /* 💻 horizontal */
+    justify-content: center;
+    
   }
+  .tarjeta {
+    width: 250px;
 
-  .menu-lista {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
   }
 
   .menu-lista li {
-    padding: 10px 0;
-    border-top: 1px solid #9c7e7e;
+    width: auto;
+  }
+
+  .menu-lista li a {
+    border-bottom: none;
+    padding: 12px 20px;
+  }
+}
+.tarjetas {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;  
+  gap: 20px;
+  padding: 20px;
+}
+
+.tarjeta {
+  background: #cc7575;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  width: 90%;
+  max-width: 18rem;
+  text-align: center;
+}
+@media print {
+
+  /* Ocultar menú y navegación */
+  header,
+  nav,
+  .menu {
+    display: none;
+  }
+
+  /* Fondo blanco y texto negro */
+  body {
+    background: white;
+    color: black;
+  }
+
+  /* Ajustar títulos */
+  h1 {
+    font-size: 18pt;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 14pt;
+  }
+
+  /* Ajustar tarjetas para impresión */
+  .tarjetas {
+    display: block;   /* una debajo de otra */
+  }
+
+  .tarjeta {
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    padding: 10px;
+    page-break-inside: avoid;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;    
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+ .tarjeta {
+    padding: 2em;
+  }
+}
+
+.imagen-responsive img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Imagen para móviles */
+@media (max-width: 768px) {
+  .imagen-responsive img {
+    content: url("imagenes/Bardock_Artwork.webp");
   }
 }
